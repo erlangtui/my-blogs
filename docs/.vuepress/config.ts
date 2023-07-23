@@ -47,29 +47,29 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '后端技术',
         link: '/technology/',
         items: [
-          { text: 'MySQL', link: '/pages/9a7ee40fc232253e/' },
-          { text: 'Redis', link: '/pages/4c778760be26d8b3/' },
-          { text: 'Docker', link: '/pages/117708e0af7f0bd9/' },
-          { text: 'Kafka', link: '/pages/41f87d890d0a02af/' },
-          { text: 'Consul', link: '/pages/9a7ee40fc232253e/' },
-          { text: 'Hive', link: '/pages/4c778760be26d8b3/' },
+          { text: 'Linux', link: '/pages/1dfdd1/' },
+          { text: 'MySQL', link: '/pages/bc1d83/' },
+          { text: 'Redis', link: '/pages/d12aeb/' },
+          { text: 'Docker', link: '/pages/559964/' },
+          { text: 'Kafka', link: '/pages/a26457/' },
+          { text: 'Consul', link: '/pages/77ea28/' },
         ],
       },
       {
         text: '计算广告',
         link: '/ad/',
         items: [
-          { text: '投放策略', link: '/pages/9a7ee40fc232253e/' },
-          { text: '召回技术', link: '/pages/4c778760be26d8b3/' },
+          { text: '投放策略', link: '/pages/5cde28/' },
+          { text: '召回技术', link: '/pages/662467/' },
         ],
       },
       {
         text: '计算机基础',
         link: '/basics/',
         items: [
-          { text: '操作系统', link: '/pages/9a7ee40fc232253e/' },
-          { text: '计算机网络', link: '/pages/4c778760be26d8b3/' },
-          { text: '数据结构与算法', link: '/pages/117708e0af7f0bd9/' },
+          { text: '操作系统', link: '/pages/512063/' },
+          { text: '计算机网络', link: '/pages/28f1a1/' },
+          { text: '数据结构与算法', link: '/pages/29b434/' },
         ],
       },
       {
@@ -99,7 +99,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
-    repo: 'xugaoyi/vuepress-theme-vdoing', // 导航栏右侧生成Github链接
+    repo: 'zhangliang6666/erlangtui', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
@@ -152,7 +152,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: '/img/erlangtui.png',
+      avatar: '/erlangtui/img/erlangtui.png',
       name: '二郎腿',
       slogan: '积少成多',
     },
@@ -183,7 +183,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     footer: {
       createYear: 2023, // 博客创建年份
       copyrightInfo:
-        'er lang tui | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
+        'er lang tui | <a href="https://github.com/zhangliang6666/erlangtui/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
