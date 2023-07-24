@@ -10,8 +10,8 @@ jobs:
     - name: vuepress-deploy
       uses: jenkey2011/vuepress-deploy@master
       env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: zhangliang6666/erlangtui.git
+        ACCESS_TOKEN: ${{ secrets.ERLANGTUI }}
+        TARGET_REPO: zhangliang6666/erlangtui
         TARGET_BRANCH: master
         BUILD_SCRIPT: yarn && yarn build
         BUILD_DIR: docs/.vuepress/dist
