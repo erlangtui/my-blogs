@@ -15,7 +15,7 @@ npm run build
 # 进入生成的文件夹
 cd $dist_path
 
-echo 'www.xugaoyi.com\nxugaoyi.com' > CNAME
+echo 'erlangtui.top' > CNAME
 
 git init
 git add -A
