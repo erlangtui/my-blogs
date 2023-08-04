@@ -305,9 +305,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         options: {
           clientID: '72daec301102d8473c61',// ToDo update
           clientSecret: 'b1a9f60c660cd6ed2214d5e1021c5069bccaac7f',
-          repo: 'zhangliang6666', // GitHub 仓库
-          owner: 'zhangliang', // GitHub仓库所有者
-          admin: ['zhangliang'], // 对仓库有写权限的人
+          repo: 'erlangtui', // GitHub 仓库
+          owner: 'zhangliang6666', // GitHub仓库所有者
+          admin: ['zhangliang6666'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
