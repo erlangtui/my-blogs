@@ -152,7 +152,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: '/erlangtui/img/erlangtui.png',
+      avatar: '/img/erlangtui.png',
       name: '二郎腿',
       slogan: '积少成多',
     },
@@ -303,8 +303,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         choosen: 'gitalk',
         options: {
-          clientID: 'a6e1355287947096b88b',// ToDo update
-          clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
+          clientID: '72daec301102d8473c61',// ToDo update
+          clientSecret: 'b1a9f60c660cd6ed2214d5e1021c5069bccaac7f',
           repo: 'erlangtui', // GitHub 仓库
           owner: 'zhangliang', // GitHub仓库所有者
           admin: ['zhangliang'], // 对仓库有写权限的人
