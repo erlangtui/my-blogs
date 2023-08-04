@@ -154,7 +154,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     blogger: {
       avatar: '/img/erlangtui.png',
       name: '二郎腿',
-      slogan: '积少成多',
+      slogan: '好记性不如烂笔头',
     },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
@@ -305,7 +305,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         options: {
           clientID: '72daec301102d8473c61',// ToDo update
           clientSecret: 'b1a9f60c660cd6ed2214d5e1021c5069bccaac7f',
-          repo: 'erlangtui', // GitHub 仓库
+          repo: 'zhangliang6666', // GitHub 仓库
           owner: 'zhangliang', // GitHub仓库所有者
           admin: ['zhangliang'], // 对仓库有写权限的人
           // distractionFreeMode: true,
