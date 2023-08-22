@@ -22,7 +22,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       description: '后端技术博客，个人学习与总结。Go、C++、Python、Shell，Mysql、Redis、Kafka、Docker、Consul、Hive等技术文',
     }
   },
-  // base: '/erlangtui/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
+  // base: '/my-blogs/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
 
   // 主题配置
   themeConfig: {
@@ -96,7 +96,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
-    repo: 'zhangliang6666/erlangtui', // 导航栏右侧生成Github链接
+    repo: 'erlangtui/my-blogs', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 18, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
@@ -144,7 +144,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
       name: 'erlangtui', // 必需
-      link: 'https://github.com/zhangliang6666', // 可选的
+      link: 'https://github.com/erlangtui', // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
@@ -166,7 +166,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         {
           iconClass: 'icon-github',
           title: 'GitHub',
-          link: 'https://github.com/zhangliang6666',
+          link: 'https://github.com/erlangtui',
         },
         {
           iconClass: 'icon-QQ',
@@ -180,14 +180,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     footer: {
       createYear: 2023, // 博客创建年份
       copyrightInfo:
-        'er lang tui | <a href="https://github.com/zhangliang6666/erlangtui/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
+        'er lang tui | <a href="https://github.com/erlangtui/my-blogs/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
       author: {
         name: 'erlangtui',
-        link: 'https://github.com/zhangliang6666'
+        link: 'https://github.com/erlangtui'
       }
     },
 
@@ -302,9 +302,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         options: {
           clientID: '72daec301102d8473c61',// ToDo update
           clientSecret: 'b1a9f60c660cd6ed2214d5e1021c5069bccaac7f',
-          repo: 'erlangtui', // GitHub 仓库
-          owner: 'zhangliang6666', // GitHub仓库所有者
-          admin: ['zhangliang6666'], // 对仓库有写权限的人
+          repo: 'my-blogs', // GitHub 仓库
+          owner: 'erlangtui', // GitHub仓库所有者
+          admin: ['erlangtui'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50

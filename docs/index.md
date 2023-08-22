@@ -81,6 +81,6 @@ bannerBg: /img/bg.jpeg # auto => 网格纹背景(有bodyBgImg时无背景)，默
 
 - **WeChat or QQ**: <a href="tencent://message/?uin=1364255742&Site=&Menu=yesUrl" class='qq'>1364255742</a>
 - **Email**: <a href="mailto:1364255742@qq.com">1364255742@qq.com</a>
-- **GitHub**: <https://github.com/zhangliang6666>
+- **GitHub**: <https://github.com/erlangtui>
 
 </br>  -->
