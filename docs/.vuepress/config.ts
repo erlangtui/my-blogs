@@ -300,8 +300,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         choosen: 'gitalk',
         options: {
-          clientID: '72daec301102d8473c61',// ToDo update
-          clientSecret: '7a653f9acf271efb8f309022074c310694bb3680',
+          clientID: '20d22da4520c242b0f41',// ToDo update
+          clientSecret: '0a5bc240b8e23f0447d5bdc56f1ab8ab44f68f51',
           repo: 'my-blogs', // GitHub 仓库
           owner: 'zhangliang', // GitHub仓库所有者
           admin: ['zhangliang'], // 对仓库有写权限的人
