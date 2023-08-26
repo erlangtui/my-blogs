@@ -65,7 +65,7 @@ export default {
     for (let i = 0; i < $sortPostsByDate.length; i++) {
       const { frontmatter: { date } } = $sortPostsByDate[i];
       if (date && type(date) === 'string') {
-        const year = date.slice(0, 4)
+        const year = date.slice(0, 7)
         if (!countByYear[year]) {
           countByYear[year] = 0
         }
@@ -107,7 +107,7 @@ export default {
       }
       const { frontmatter: { date } } = item
       if (date && type(date) === 'string') {
-        return date.slice(0, 4)
+        return date.slice(0, 7)
       }
     },
     getDate(item) {

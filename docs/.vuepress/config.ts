@@ -12,8 +12,8 @@ const DOMAIN_NAME = 'erlangtui.top' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
-  theme: 'vdoing', // 使用npm主题包
-  // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
+  // theme: 'vdoing', // 使用npm主题包
+  theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
 
   locales: {
     '/': {
@@ -268,7 +268,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
         copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
-        duration: 1000, // prompt message display time.
+        duration: 500, // prompt message display time.
         showInMobile: false, // whether to display on the mobile side, default: false.
       },
     ],
@@ -300,7 +300,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         choosen: 'gitalk',
         options: {
-          clientID: '20d22da4520c242b0f41',// ToDo update
+          clientID: '20d22da4520c242b0f41',
           clientSecret: '0a5bc240b8e23f0447d5bdc56f1ab8ab44f68f51',
           repo: 'my-blogs', // GitHub 仓库
           owner: 'erlangtui', // GitHub仓库所有者
