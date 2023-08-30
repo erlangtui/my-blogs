@@ -304,7 +304,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           clientSecret: '0a5bc240b8e23f0447d5bdc56f1ab8ab44f68f51',
           repo: 'my-blogs', // GitHub 仓库
           owner: 'erlangtui', // GitHub仓库所有者
-          admin: ['erlangtui', 'zhangliang', 'zhangliang6666'], // 对仓库有写权限的人
+          admin: ['erlangtui', 'zhangliang', 'ZhangLiang6666'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
