@@ -28,9 +28,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   themeConfig: {
     // 导航配置
     nav: [
-      { 
-        text: '首页', 
-        link: '/' 
+      {
+        text: '首页',
+        link: '/'
       },
       {
         text: '语言',
@@ -89,9 +89,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: '标签', link: '/tags/' },
         ],
       },
-      { 
-        text: '关于', 
-        link: '/about/' 
+      {
+        text: '关于',
+        link: '/about/'
       },
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
@@ -198,7 +198,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
     ['link', { rel: 'icon', href: '/img/logo.ico' }], //favicons，资源放在public文件夹
-    ['meta',{name: 'keywords', content: '后端开发，个人博客，技术文档，Go、C++、Python、Mysql、Redis、Kafka等'}],
+    ['meta', { name: 'keywords', content: '后端开发，个人博客，技术文档，Go、C++、Python、Mysql、Redis、Kafka等' }],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     // [
@@ -304,7 +304,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           clientSecret: '0a5bc240b8e23f0447d5bdc56f1ab8ab44f68f51',
           repo: 'my-blogs', // GitHub 仓库
           owner: 'erlangtui', // GitHub仓库所有者
-          admin: ['erlangtui', 'zhangliang', 'ZhangLiang6666', '1364255742@qq.com'], // 对仓库有写权限的人
+          admin: ['erlangtui'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
