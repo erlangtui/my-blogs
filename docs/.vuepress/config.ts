@@ -149,7 +149,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: '/img/erlangtui.png',
+      avatar: '/img/logo.png',
       name: '二郎腿',
       slogan: '好记性不如烂笔头',
     },
