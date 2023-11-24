@@ -300,11 +300,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         choosen: 'gitalk',
         options: {
-          clientID: '20d22da4520c242b0f41',
-          clientSecret: '0a5bc240b8e23f0447d5bdc56f1ab8ab44f68f51',
-          repo: 'my-blogs', // GitHub 仓库
+          clientID: '7b6bc5b527a33dd2b488',
+          clientSecret: 'caec215bbc675d779d2785e4a6f109a513dfed14',
+          repo: 'my-blogs-comments', // GitHub 仓库
           owner: 'erlangtui', // GitHub仓库所有者
-          admin: ['zhangliang14'], // 对仓库有写权限的人
+          admin: ['erlangtui'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
