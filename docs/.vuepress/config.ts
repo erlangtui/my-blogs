@@ -302,7 +302,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         options: {
           clientID: '7b6bc5b527a33dd2b488',
           clientSecret: 'f73123b21ead377948462319d4779fa933aec8fa',
-          repo: 'my-blogs-comments', // GitHub 仓库
+          repo: 'my-blogs', // GitHub 仓库
           owner: 'erlangtui', // GitHub仓库所有者
           admin: ['erlangtui'], // 对仓库有写权限的人
           // distractionFreeMode: true,
