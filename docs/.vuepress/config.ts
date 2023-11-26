@@ -129,7 +129,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // updateBar: { // 最近更新栏
     //   showToArticle: true, // 显示到文章页底部，默认true
-    //   moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
+    //   moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archiffves'
     // },
     // rightMenuBar: false, // 是否显示右侧文章大纲栏，默认true (屏宽小于1300px下无论如何都不显示)
     // sidebarOpen: false, // 初始状态是否打开左侧边栏，默认true
