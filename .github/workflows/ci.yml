@@ -34,7 +34,7 @@ jobs:
           npm install
           npm run build
           cd docs/.vuepress/dist
-          # echo 'erlangtui.top' > CNAME
+          echo 'erlangtui.top' > CNAME
           git config --global init.defaultBranch $deploy_branch
           git init
           git config user.name ${user_name}
