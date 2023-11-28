@@ -2,7 +2,7 @@
 
 ```bash
 # clone the project
-git clone https://github.com/xugaoyi/vuepress-theme-vdoing.git
+git clone https://github.com/erlangtui/my-blogs.git
 
 # enter the project directory
 cd vuepress-theme-vdoing
@@ -16,5 +16,5 @@ npm run dev # or yarn dev
 
 
 ## 许可证
-[MIT](https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE)
+[MIT](https://github.com/erlangtui/my-blogs/blob/master/LICENSE)
 
