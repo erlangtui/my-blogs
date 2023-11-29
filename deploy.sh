@@ -21,8 +21,8 @@ git init
 git add -A
 git commit -m "deploy, $commit_info"
 # git push -f $push_addr HEAD:$push_branch
-# git push -f git@8.140.51.225:/home/website/my-blogs.git HEAD:master
-git push -f git@erlangtui.top:/home/website/my-blogs.git HEAD:master
+# git push -f git@8.140.51.225:/data/website/my-blogs.git HEAD:master
+git push -f git@erlangtui.top:/data/website/my-blogs.git HEAD:master
 
 cd -
 rm -rf $dist_path
