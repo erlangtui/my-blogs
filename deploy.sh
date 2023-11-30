@@ -26,3 +26,5 @@ git push -f git@erlangtui.top:/data/website/my-blogs.git HEAD:master
 
 cd -
 rm -rf $dist_path
+
+# export NODE_OPTIONS=--openssl-legacy-provider && 
