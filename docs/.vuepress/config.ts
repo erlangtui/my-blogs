@@ -212,6 +212,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ['link', { rel: 'icon', href: '/img/logo.ico' }], //favicons，资源放在public文件夹
     ['meta', { name: 'keywords', content: '后端开发，个人博客，技术文档，Go、C++、Python、Mysql、Redis、Kafka等' }],
     ['meta', { name: 'baidu-site-verification', content: 'codeva-3RG9kknIL2' }], // 百度统计的站长验证（你可以去掉）
+    // ['meta', { name: 'baidu-site-verification', content: 'codeva-Y0189jEM7f' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     // [
     //   'script',
