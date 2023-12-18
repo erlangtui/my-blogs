@@ -211,8 +211,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     ['link', { rel: 'icon', href: '/img/logo.ico' }], //favicons，资源放在public文件夹
     ['meta', { name: 'keywords', content: '后端开发，个人博客，技术文档，Go、C++、Python、Mysql、Redis、Kafka等' }],
-    ['meta', { name: 'baidu-site-verification', content: 'codeva-3RG9kknIL2' }], // 百度统计的站长验证（你可以去掉）
-    // ['meta', { name: 'baidu-site-verification', content: 'codeva-Y0189jEM7f' }], // 百度统计的站长验证（你可以去掉）
+    // ['meta', { name: 'baidu-site-verification', content: 'codeva-3RG9kknIL2' }], // 百度统计的站长验证（你可以去掉）
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-Y0189jEM7f' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     // [
     //   'script',
@@ -320,7 +320,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           admin: ['erlangtui'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          proxy: 'https://cors-server-gitalk.vercel.app',
+          proxy: 'https://vercel.erlangtui.top/github_access_token',
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
           title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
           labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
