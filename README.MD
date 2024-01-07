@@ -5,7 +5,7 @@
 git clone https://github.com/erlangtui/my-blogs.git
 
 # enter the project directory
-cd vuepress-theme-vdoing
+cd my-blogs
 
 # install dependency
 npm install # or yarn install
