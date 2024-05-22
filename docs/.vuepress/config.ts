@@ -197,18 +197,18 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
-    [
-      'script', {}, `
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?86ac0ecbbcef4ed865459d11c23571d9";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
-      </script>        
-      `
-    ],
+    // [
+    //   'script', {}, `
+    //   var _hmt = _hmt || [];
+    //   (function() {
+    //     var hm = document.createElement("script");
+    //     hm.src = "https://hm.baidu.com/hm.js?86ac0ecbbcef4ed865459d11c23571d9";
+    //     var s = document.getElementsByTagName("script")[0]; 
+    //     s.parentNode.insertBefore(hm, s);
+    //   })();
+    //   </script>        
+    //   `
+    // ],
     ['link', { rel: 'icon', href: '/img/logo.ico' }], //favicons，资源放在public文件夹
     ['meta', { name: 'keywords', content: '后端开发，个人博客，技术文档，Go、C++、Python、Mysql、Redis、Kafka等' }],
     // ['meta', { name: 'baidu-site-verification', content: 'codeva-3RG9kknIL2' }], // 百度统计的站长验证（你可以去掉）
