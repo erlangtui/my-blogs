@@ -109,13 +109,13 @@ const htmlModule: VdoingThemeConfig['htmlModules'] = {
 
 
 // const htmlModule = {
-//   homeSidebarB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   sidebarT: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   sidebarB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   pageT: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   pageB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   windowLB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
-//   windowRB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">自定义模块测试</div>`,
+//   homeSidebarB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">首页侧边栏底部</div>`,
+//   sidebarT: `<div style="width:100%;height:100px;color:#fff;background: #eee;">所有左侧边栏顶部</div>`,
+//   sidebarB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">所有左侧边栏底部</div>`,
+//   pageT: `<div style="width:100%;height:100px;color:#fff;background: #eee;">页面顶部</div>`,
+//   pageB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">页面底部</div>`,
+//   windowLB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">全局窗口左下角</div>`,
+//   windowRB: `<div style="width:100%;height:100px;color:#fff;background: #eee;">全局窗口右下角</div>`,
 // }
 
 
