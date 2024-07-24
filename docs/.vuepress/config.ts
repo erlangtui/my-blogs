@@ -55,14 +55,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: 'Consul', link: '/pages/77ea28/' },
         ],
       },
-      {
-        text: '计算广告',
-        link: '/ad/',
-        items: [
-          { text: '投放策略', link: '/pages/5cde28/' },
-          { text: '召回技术', link: '/pages/662467/' },
-        ],
-      },
+      // {
+      //   text: '计算广告',
+      //   link: '/ad/',
+      //   items: [
+      //     { text: '投放策略', link: '/pages/5cde28/' },
+      //     { text: '召回技术', link: '/pages/662467/' },
+      //   ],
+      // },
       {
         text: '计算机基础',
         link: '/basics/',
@@ -76,8 +76,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '更多',
         link: '/more/',
         items: [
-          // { text: '学习', link: '/pages/82fde9/' },
-          // { text: '面试', link: '/pages/aea6571b7a8bae86/' },
+          { text: '网站收藏', link: '/pages/a8e456/' },
+          { text: '其他文章', link: '/pages/b07966/' },
         ],
       },
       {
