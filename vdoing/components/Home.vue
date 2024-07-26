@@ -355,8 +355,8 @@ export default {
       z-index 1
       overflow hidden
       .hero
-        text-align center
-        margin-top 3rem
+        text-align left
+        margin-top -4rem
         img
           max-width 100%
           max-height 240px
