@@ -18,7 +18,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "二郎腿",
+      title: "二郎腿的个人博客",
       description: '后端技术博客，个人学习与总结。Go、C++、Python、Shell，Mysql、Redis、Kafka、Docker、Consul、Hive等技术文',
     }
   },
@@ -211,9 +211,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // ],
     ['link', { rel: 'icon', href: '/img/logo.ico' }], //favicons，资源放在public文件夹
     ['meta', { name: 'keywords', content: '后端开发，个人博客，技术文档，Go、C++、Python、Mysql、Redis、Kafka等' }],
-    ['meta', { name: 'baidu-site-verification', content: 'codeva-Y0189jEM7f' }], // 百度统计的站长验证（你可以去掉）
-    ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-GQzTi8Q8fG' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: '360-site-verification', content: 'c04fbb9e09bf8d4d06792071154494f3' }], // 360 站长验证
+    ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     // [
     //   'script',
     //   {
