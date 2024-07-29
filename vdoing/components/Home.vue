@@ -153,6 +153,7 @@
           :tagsData="$categoriesAndTags.tags"
           :length="30"
         />
+        <webInfo />
         <div
           class="custom-html-box card-box"
           v-if="homeSidebarB"
@@ -174,6 +175,7 @@ import Pagination from '@theme/components/Pagination'
 import BloggerBar from '@theme/components/BloggerBar'
 import CategoriesBar from '@theme/components/CategoriesBar'
 import TagsBar from '@theme/components/TagsBar'
+import WebInfo from './WebInfo.vue';
 
 const MOBILE_DESKTOP_BREAKPOINT = 720 // refer to config.styl
 
@@ -241,7 +243,7 @@ export default {
       };
     }
   },
-  components: { NavLink, MainLayout, PostList, UpdateArticle, BloggerBar, CategoriesBar, TagsBar, Pagination },
+  components: { NavLink, MainLayout, PostList, UpdateArticle, BloggerBar, CategoriesBar, TagsBar, Pagination, WebInfo },
   created() {
     this.total = this.$sortPosts.length
   },
