@@ -228,8 +228,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     //   `
     // ],
     ['link', { rel: 'icon', href: '/img/logo.ico' }], //favicons，资源放在public文件夹
-    ['link', { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_3077305_pt8umhrn4k9.css' }],
-    ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
+    ['link', { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_3077305_pt8umhrn4k9.css' }], // 网站统计信息相关
+    ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }], // 网站统计信息相关
     ['meta', { name: 'keywords', content: '后端开发，个人博客，技术文档，Go、C++、Python、Mysql、Redis、Kafka等' }],
     ['meta', { name: 'baidu-site-verification', content: 'codeva-GQzTi8Q8fG' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: '360-site-verification', content: 'c04fbb9e09bf8d4d06792071154494f3' }], // 360 站长验证
