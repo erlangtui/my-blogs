@@ -53,7 +53,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: 'MySQL', link: '/pages/bc1d83/' },
           { text: 'Redis', link: '/pages/d12aeb/' },
           { text: 'Docker', link: '/pages/559964/' },
-          { text: 'Kafka', link: '/pages/a26457/' },
+          { text: 'Kafka', link: '/pages/3b00ea/' },
           { text: 'Consul', link: '/pages/77ea28/' },
         ],
       },
