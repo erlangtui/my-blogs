@@ -55,6 +55,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: 'Docker', link: '/pages/559964/' },
           { text: 'Kafka', link: '/pages/3b00ea/' },
           { text: 'Consul', link: '/pages/77ea28/' },
+          { text: 'Hive', link: '/pages/8ae3e0/' },
         ],
       },
       // {
