@@ -19,15 +19,15 @@ if (DOMAIN) {
  * 主体函数
  */
 function main() {
-  fs.writeFileSync(urlsRoot, DOMAIN)
+  // fs.writeFileSync(urlsRoot, DOMAIN)
   const files = readFileList(); // 读取所有md文件数据
 
   files.forEach(file => {
     const { data } = matter(fs.readFileSync(file.filePath, 'utf8'));
 
-    if (data.permalink) {
-      const link = `\r\n${DOMAIN}${data.permalink}`;
-      console.log(link)
+    if (data.permalink && data.date) {
+      const link = `\r\n${data.date.toISOString()}\t${DOMAIN}${data.permalink}`;
+      // console.log(link)
       fs.appendFileSync(urlsRoot, link);
     }
   })
