@@ -6,7 +6,8 @@ tagline: 好记性不如烂笔头，以博客记录学习与成长！
 # actionText: 点进去看看吧 →
 actionLink: /lang/
 # bannerBg: auto
-bannerBg: /img/bg.jpeg # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
+bannerBg: 'https://cdn.jsdelivr.net/gh/erlangtui/img-bed@master/public/bg.y0pmsykjlq8.jpg'
+# bannerBg: /img/bg.jpeg # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 
 # features: # 可选的
 #   - title: 语言
