@@ -80,7 +80,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         link: '/more/',
         items: [
           { text: '网站收藏', link: '/pages/a8e456/' },
-          { text: '其他文章', link: '/pages/b07966/' },
+          { text: '其他文章', link: '/pages/f4f6d6/' },
         ],
       },
       {
