@@ -1,0 +1,31 @@
+==================================================================
+Congratulations! Installed successfully!
+=============注意：首次打开面板浏览器将提示不安全=================
+
+ 请选择以下其中一种方式解决不安全提醒
+ 1、下载证书，地址：https://dg2.bt.cn/ssl/baota_root.pfx  双击安装,密码【www.bt.cn】
+ 2、点击【高级】-【继续访问】或【接受风险并继续】访问
+ 教程：https://www.bt.cn/bbs/thread-117246-1-1.html
+ mac用户请下载使用此证书：https://dg2.bt.cn/ssl/baota_root.crt
+
+========================面板账户登录信息==========================
+
+ 【云服务器】请在安全组放行 32808 端口
+ 外网面板地址: https://8.140.51.225:32808/bf74c10a
+ 内网面板地址: https://172.21.49.14:32808/bf74c10a
+ username: 1pqpnwle
+ password: a36b6b7c
+
+ 浏览器访问以下链接，添加宝塔客服
+ https://www.bt.cn/new/wechat_customer
+==================================================================
+Time consumed: 1 Minute!
+
+数据库名：sql246325
+用户：sql246325
+密码：2NL58ftGTw
+访问站点：http://bt.erlangtui.top/index.php
+
+word press 账户密码
+erlangtui
+C1DNKyvsYIB8(S3HPO
