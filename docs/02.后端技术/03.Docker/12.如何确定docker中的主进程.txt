@@ -1,0 +1,79 @@
+在Docker中，容器内的主进程（即PID=1的进程）的确定规则如下：
+
+---
+
+### 1. **主进程的确定机制**
+Docker容器启动时，**PID=1的进程**由以下两种方式决定：
+- **通过Dockerfile中的`CMD`或`ENTRYPOINT`指令**：  
+  在`Dockerfile`中定义的`CMD`或`ENTRYPOINT`启动的第一个进程默认成为PID=1的进程。
+  ```dockerfile
+  # 示例：nginx 将成为容器内的主进程（PID=1）
+  CMD ["nginx", "-g", "daemon off;"]
+  ```
+
+- **通过`docker run`命令直接指定**：  
+  如果在启动容器时覆盖默认命令，则新命令的进程成为PID=1。
+  ```bash
+  docker run my-image /app/main.sh  # /app/main.sh 成为PID=1
+  ```
+
+---
+
+### 2. **多进程场景下的主进程**
+若容器内运行多个进程（例如通过脚本启动多个子进程），需明确以下几点：
+- **前台进程为PID=1**：  
+  Docker要求至少有一个**前台进程**持续运行，否则容器会直接退出。  
+  例如，通过`bash`脚本启动多个后台进程后，必须有一个前台进程保持运行：
+  ```bash
+  # start.sh 示例
+  /app/service1 &  # 后台进程
+  /app/service2 &  # 后台进程
+  exec nginx -g "daemon off;"  # 前台进程（PID=1）
+  ```
+
+- **使用`exec`避免进程嵌套**：  
+  在脚本中通过`exec`替换当前进程，确保最终进程直接继承PID=1。  
+  若未使用`exec`，脚本本身（如`start.sh`）会成为PID=1，而其子进程（如`nginx`）可能无法正确处理信号。
+
+---
+
+### 3. **信号处理与PID=1的特殊性**
+PID=1的进程在Linux中有特殊行为：
+- **信号传递默认行为**：  
+  若PID=1的进程未显式注册信号处理器，发送给容器的`SIGTERM`（如`docker stop`）会被忽略，导致容器强制终止（超时后`SIGKILL`）。
+  
+- **解决信号问题的两种方式**：
+  1. **主进程主动处理信号**：  
+     确保PID=1的进程能响应`SIGTERM`等信号。例如，在代码中捕获信号并优雅退出。
+  2. **使用轻量级Init系统**：  
+     通过`--init`参数或集成`tini`，让一个专用的Init进程（如`/dev/init`）成为PID=1，由其管理子进程和信号。
+     ```bash
+     # 使用Docker内置的init系统
+     docker run --init my-image
+     ```
+
+---
+
+### 4. **僵尸进程（Zombie）回收问题**
+- **PID=1的进程需回收子进程**：  
+  Linux内核要求PID=1的进程负责回收终止的子进程（僵尸进程）。若主进程未实现此逻辑，僵尸进程会累积。
+- **推荐使用Init系统**：  
+  使用`tini`等工具作为PID=1的进程，自动回收僵尸进程：
+  ```dockerfile
+  # 在Dockerfile中显式安装tini
+  RUN apt-get install -y tini
+  ENTRYPOINT ["tini", "--"]
+  CMD ["/app/main"]
+  ```
+
+---
+
+### 总结
+- **主进程是PID=1的进程**：由Dockerfile或启动命令指定，需保持前台运行。
+- **信号与僵尸进程**：PID=1进程需正确处理信号并回收子进程，否则需依赖Init系统。
+- **最佳实践**：对多进程场景，建议使用`--init`或`tini`，避免直接依赖应用程序处理PID=1的职责。
+
+```bash
+# 示例：启动带Init系统的容器
+docker run --init my-multi-process-image
+```
