@@ -1,0 +1,209 @@
+---
+title: 100G重复id找出重复量最多的id
+date: 2025-02-14 21:35:40
+permalink: /pages/7fb371/
+categories:
+  - 更多
+  - 其他文章
+tags:
+  - 
+author: 
+  name: erlangtui
+  link: https://github.com/erlangtui
+---
+
+为了高效处理100GB大文件并找出重复量最大的ID，可以采用分片处理策略，避免内存溢出。以下是分步解决方案及代码实现：
+
+### 解决方案
+1. **分片处理**：将大文件按ID哈希值分片到多个临时文件，确保相同ID位于同一分片。
+2. **统计分片**：分别处理每个分片文件，统计处每个文件中重复数量最多的 ID。
+3. **合并结果**：比较所有文件中重复数量最多的 ID 找到最大重复数的 ID。
+
+### 代码实现
+```go
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"hash/fnv"
+	"log"
+	"os"
+	"strconv"
+	"strings"
+)
+
+const (
+	numShards   = 1000 // 初始分片数量
+	mergeShards = 1000 // 合并分片数量
+)
+
+func main() {
+	inputFile := "input.txt"
+
+	// 步骤1：分片处理
+	splitIntoShards(inputFile)
+
+	// 步骤2：处理每个分片生成中间结果
+	for i := 0; i < numShards; i++ {
+		processShard(i)
+	}
+
+	// 步骤3：合并中间结果并找到最大值
+	maxID, maxCount := mergeIntermediateFiles()
+	fmt.Printf("重复量最大的ID: %s, 出现次数: %d\n", maxID, maxCount)
+
+	// 可选：清理临时文件
+	cleanupTempFiles()
+}
+
+// 分片处理：将大文件按哈希分片
+func splitIntoShards(inputFile string) {
+	file, err := os.Open(inputFile)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	shardFiles := make([]*os.File, numShards)
+	for i := range shardFiles {
+		shardFile, err := os.Create(fmt.Sprintf("shard_%d.txt", i))
+		if err != nil {
+			log.Fatal(err)
+		}
+		defer shardFile.Close()
+		shardFiles[i] = shardFile
+	}
+
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		id := scanner.Text()
+		h := fnv.New32a()
+		h.Write([]byte(id))
+		shard := h.Sum32() % numShards
+		fmt.Fprintln(shardFiles[shard], id)
+	}
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
+}
+
+// 处理分片：统计每个分片中的ID出现次数
+func processShard(shardID int) {
+	shardFileName := fmt.Sprintf("shard_%d.txt", shardID)
+	file, err := os.Open(shardFileName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	counts := make(map[string]int)
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		id := scanner.Text()
+		counts[id]++
+	}
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	intermediateFile, err := os.Create(fmt.Sprintf("intermediate_%d.txt", shardID))
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer intermediateFile.Close()
+
+	for id, count := range counts {
+		fmt.Fprintf(intermediateFile, "%s\t%d\n", id, count)
+	}
+}
+
+// 合并中间结果：二次分片后统计全局最大值
+func mergeIntermediateFiles() (string, int) {
+	mergeFiles := make([]*os.File, mergeShards)
+	for i := range mergeFiles {
+		file, err := os.Create(fmt.Sprintf("merge_shard_%d.txt", i))
+		if err != nil {
+			log.Fatal(err)
+		}
+		defer file.Close()
+		mergeFiles[i] = file
+	}
+
+	// 分片中间结果到合并文件
+	for i := 0; i < numShards; i++ {
+		file, err := os.Open(fmt.Sprintf("intermediate_%d.txt", i))
+		if err != nil {
+			log.Fatal(err)
+		}
+		scanner := bufio.NewScanner(file)
+		for scanner.Scan() {
+			line := scanner.Text()
+			parts := strings.Split(line, "\t")
+			id, countStr := parts[0], parts[1]
+			h := fnv.New32a()
+			h.Write([]byte(id))
+			shard := h.Sum32() % mergeShards
+			fmt.Fprintf(mergeFiles[shard], "%s\t%s\n", id, countStr)
+		}
+		file.Close()
+	}
+
+	// 处理每个合并分片，找出最大值
+	maxID, maxCount := "", 0
+	for i := 0; i < mergeShards; i++ {
+		file, err := os.Open(fmt.Sprintf("merge_shard_%d.txt", i))
+		if os.IsNotExist(err) {
+			continue
+		} else if err != nil {
+			log.Fatal(err)
+		}
+
+		counts := make(map[string]int)
+		scanner := bufio.NewScanner(file)
+		for scanner.Scan() {
+			line := scanner.Text()
+			parts := strings.Split(line, "\t")
+			id, countStr := parts[0], parts[1]
+			count, _ := strconv.Atoi(countStr)
+			counts[id] += count
+		}
+		file.Close()
+
+		for id, cnt := range counts {
+			if cnt > maxCount {
+				maxID, maxCount = id, cnt
+			}
+		}
+	}
+	return maxID, maxCount
+}
+
+// 清理临时文件
+func cleanupTempFiles() {
+	for i := 0; i < numShards; i++ {
+		os.Remove(fmt.Sprintf("shard_%d.txt", i))
+		os.Remove(fmt.Sprintf("intermediate_%d.txt", i))
+	}
+	for i := 0; i < mergeShards; i++ {
+		os.Remove(fmt.Sprintf("merge_shard_%d.txt", i))
+	}
+}
+```
+
+### 优化与注意事项
+1. **分片数量调整**：根据内存容量调整`numShards`和`mergeShards`，确保每个分片处理时内存足够。
+2. **并行处理**：可并发处理分片统计和合并分片，提升速度（需注意文件读写冲突）。
+3. **哈希函数选择**：FNV哈希速度快且分布均匀，适合此场景。
+4. **错误处理**：增强文件操作的错误处理，确保程序健壮性。
+5. **临时文件管理**：处理完成后及时清理临时文件，释放磁盘空间。
+
+该方法通过两次分片有效控制内存使用，确保处理大文件时的高效性和准确性。
+
+temu
+
+[ip1, ip2] 地区1
+100w 行，
+o(lgN) 查找 ip 对应的地区 
+
+找出一些类似于“100G的数据中，如何找出评率最高的一些数据”这样的面试题
